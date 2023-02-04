@@ -1494,6 +1494,11 @@ PrefabInstance:
       propertyPath: mPlayerTransform
       value: 
       objectReference: {fileID: 92285522}
+    - target: {fileID: 8792520007438110292, guid: 81a04f51588d34c419c81748a6d230e1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

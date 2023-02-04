@@ -38,54 +38,6 @@ public class AudioManager : MonoBehaviour
         mBGSource.clip = mBGSounds[0];
     }
 
-    //default playsound, assumes position is at (0,0,0)
-	static public void PlaySound(string name)
-	{
-		AudioManager.PlaySound (name);
-	}
-    static public void PlaySound(int pSound)
-    {
-        AudioManager.PlaySound(pSound);
-    }
-
-    static public void PlaySound(string pName, Vector3 pPos)
-	{
-		AudioClip fClip = null;
-        //find sound clip to play
-        fClip = AudioManager.mActivemixer.GetSound(pName);
-        
-        //find availabel audio source
-        for (int i = 0; i < mActivemixer.mASource.Count; i++)
-        {
-            if (!mActivemixer.mASource[i].isPlaying)
-            {
-                mActivemixer.mASource[i].clip = fClip;
-                mActivemixer.mASource[i].Play();
-                return;
-            }
-        }
-        Debug.Log("No aduiosource available");
-
-    }
-    static public void PlaySound(int pIndex, Vector3 pos)
-    {
-        AudioClip fClip = null;
-        //get sound clip to play
-        fClip = AudioManager.mActivemixer.mSounds[pIndex];
-
-        //find available audio source
-        for (int i = 0; i < mActivemixer.mASource.Count; i++)
-        {
-            if (!mActivemixer.mASource[i].isPlaying)
-            {
-                mActivemixer.mASource[i].clip = fClip;
-                mActivemixer.mASource[i].Play();
-                return;
-            }
-        }
-        Debug.Log("No aduiosource available");
-    }
-
     static public void PlayBgMusic()
     {
         mActivemixer.mBGSource.Play();

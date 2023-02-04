@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     //Last PlayerCheckpoint
     //
     public Transform mLastCheckPoint;
+    public Transform mWinCondition;
 
     private void Awake()
     {

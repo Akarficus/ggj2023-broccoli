@@ -70,7 +70,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
     //When the use key gets pressed ( prototype not sure if we will be using things )
     private void OnUse( InputAction.CallbackContext pContext )
     {

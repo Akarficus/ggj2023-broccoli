@@ -264,8 +264,8 @@ GameObject:
   - component: {fileID: 765210321}
   - component: {fileID: 765210320}
   m_Layer: 0
-  m_Name: PointLight
-  m_TagString: Untagged
+  m_Name: Sphere
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,12 +278,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765210318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.96, y: 1.21, z: -0.103}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 769959678}
-  m_Father: {fileID: 2093646458}
+  m_Children: []
+  m_Father: {fileID: 769959678}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &765210320
@@ -383,11 +382,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769959677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 1.72, y: 0.603, z: 1.356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 765210319}
+  m_Children:
+  - {fileID: 765210319}
+  m_Father: {fileID: 2093646458}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &769959679
@@ -426,7 +426,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.5570802, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 1.6200445
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -467,7 +467,7 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0.39
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -881,7 +881,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400004, guid: e11f662626928b14e8f57acb029360b9,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 765210319}
+      addedObject: {fileID: 769959678}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: e11f662626928b14e8f57acb029360b9,
         type: 3}

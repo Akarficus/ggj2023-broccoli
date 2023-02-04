@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     //Private field to store and move action references
     private InputAction mMoveAction;
 
+    public float mStepCycle = 0f;
+    float mNextStep = 6f;
+
 
     //When class wakesup I need these things mapped
     private void Awake()
@@ -67,11 +70,29 @@ public class PlayerController : MonoBehaviour
     {
         //Move only when the mInput magnitude is being pushed or non 0
         mRidgidBody.MovePosition( transform.position + ( transform.forward * mInput.magnitude ) * mSpeed * Time.deltaTime );
+        ProgressStepCycle();
 
     }
 
-    //When the use key gets pressed ( prototype not sure if we will be using things )
-    private void OnUse( InputAction.CallbackContext pContext )
+    private void ProgressStepCycle()
+    {
+        if (mInput.sqrMagnitude > 0)
+        {
+            mStepCycle += (mInput.magnitude + mSpeed) *Time.fixedDeltaTime;
+        }
+
+        if (mStepCycle < mNextStep)
+        {
+            return;
+        }
+
+        mStepCycle = 0f;
+ 
+        AudioManager.PlayOneShot(0, 0.75f);
+        
+    }
+        //When the use key gets pressed ( prototype not sure if we will be using things )
+        private void OnUse( InputAction.CallbackContext pContext )
     {
         Debug.Log( "Used the thing" );
     }

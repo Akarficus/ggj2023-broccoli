@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         }
 
         mStepCycle = 0f;
- 
+
         AudioManager.PlayOneShot(0, 0.75f);
         
     }

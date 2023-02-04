@@ -6,10 +6,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+
+
+    //Some kind of component that takes health ? Can we heal?
+
+    //Do we see the healthbar?
+    //Should it be here or in a different component?
+
+
+    //Physics body information
     [SerializeField] private Rigidbody mRidgidBody;
     [SerializeField] private float mSpeed = 5f;
     [SerializeField] private float mTurnSpeed = 360f;
 
+    //Controller input calculations (ISO movement calcs)
     private Vector3 mInput;
 
     private Matrix4x4 mMatrix = Matrix4x4.Rotate(Quaternion.Euler(0f, 45f, 0f));
@@ -21,6 +31,8 @@ public class PlayerController : MonoBehaviour
     //Private field to store and move action references
     private InputAction mMoveAction;
 
+
+    //When class wakesup I need these things mapped
     private void Awake()
     {
         mMoveAction = mActions.FindActionMap( "gameplay" ).FindAction( "move" );
@@ -59,11 +71,14 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    //When the use key gets pressed ( prototype not sure if we will be using things )
     private void OnUse( InputAction.CallbackContext pContext )
     {
         Debug.Log( "Used the thing" );
     }
 
+
+    //When the class gets enabled and disabled turn the action map on and off
     private void OnEnable()
     {
         mActions.FindActionMap( "gameplay" ).Enable();

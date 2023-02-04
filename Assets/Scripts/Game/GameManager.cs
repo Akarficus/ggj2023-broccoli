@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     //Things that we handle in this state
     //Last PlayerCheckpoint
     //
-    public Vector3 mLastCheckPoint;
+    public Transform mLastCheckPoint;
 
     private void Awake()
     {

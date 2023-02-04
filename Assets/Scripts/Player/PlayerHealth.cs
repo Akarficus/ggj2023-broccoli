@@ -25,6 +25,8 @@ public class PlayerHealth : MonoBehaviour
         {
             DamagePlayer( 10 );
         }
+        // check to see if player is dead
+        IsPlayerDead();
     }
 
     public void DamagePlayer( int damage )
@@ -32,6 +34,17 @@ public class PlayerHealth : MonoBehaviour
         mCurrentHealth -= damage;
 
          mHealthBar.SetHealth( mCurrentHealth );
+    }
+
+    public void IsPlayerDead()
+    {
+        if ( mCurrentHealth <= 0 )
+        {
+            // go back to last checkpoint
+            transform.position = GameManager.Instance.mLastCheckPoint.position;
+            // reset current health back to max health
+            mCurrentHealth = mMaxHealth;
+        }
     }
 
 }

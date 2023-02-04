@@ -796,7 +796,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -897,6 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mPlayerController: {fileID: 1563736977}
+  mLastCheckPoint: {fileID: 1716535633}
 --- !u!4 &1853130723
 Transform:
   m_ObjectHideFlags: 0

@@ -18,6 +18,6 @@ public class CheckPointController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.mLastCheckPoint = transform.position;
+        GameManager.Instance.mLastCheckPoint = transform;
     }
 }

@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 1009825238}
   - component: {fileID: 1009825237}
   - component: {fileID: 1009825236}
+  - component: {fileID: 1009825240}
   m_Layer: 0
   m_Name: EndSphere
   m_TagString: Untagged
@@ -514,7 +515,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -585,6 +586,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1009825240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009825235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc8476654ced6f448ca1d1fee1d4b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1126287070 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8792520007438110293, guid: 81a04f51588d34c419c81748a6d230e1,
@@ -898,6 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mPlayerController: {fileID: 1563736977}
   mLastCheckPoint: {fileID: 1716535633}
+  mWinCondition: {fileID: 1009825239}
 --- !u!4 &1853130723
 Transform:
   m_ObjectHideFlags: 0

@@ -1,0 +1,7 @@
+https://www.iquilezles.org/www/articles/functions/functions.htm
+
+Intro
+When writing shader or during any procedural creation process (texturing, modeling, shading, animation...) you often find yourself modifying signals in different ways so they
+behave the way you need. It is common to use smoothstep() to threshold some values, or pow() to shape a signal, or clamp() to clip it, fmod() to make it repeat, a mix() to
+blend between two signals, exp() for attenuatation, etc etc. All these functions are often conveniently available by default in most languages. However there are some
+operations that are also relativelly used that don't come by default in any language. The following (files are) a list of some of the functions that I find myself using over and over again:

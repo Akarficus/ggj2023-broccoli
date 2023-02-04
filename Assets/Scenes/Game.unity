@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mPlayerController: {fileID: 1563736977}
-  mLastCheckPoint: {x: 13, y: 1, z: 15}
+  mLastCheckPoint: {x: 16, y: 0.7, z: 19}
 --- !u!4 &1853130723
 Transform:
   m_ObjectHideFlags: 0

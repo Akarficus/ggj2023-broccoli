@@ -20,7 +20,7 @@ public class MainMenuManager : MonoBehaviour
         if(mPressedPlayButton)
         {
             mPressedPlayButton = false;
-            SceneManager.LoadSceneAsync("Game");
+            SceneManager.LoadSceneAsync("Shading");
         }
         else if( mPressedCreditsButton )
         {

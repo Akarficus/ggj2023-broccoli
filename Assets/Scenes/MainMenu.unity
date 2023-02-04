@@ -464,7 +464,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Game
+          m_StringArgument: Shading
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &637534002
@@ -521,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 901701527891173494, guid: cb29bed7deae72545b7c9b1f1a9e5fe1,
         type: 3}
       propertyPath: mNextScene
-      value: Game
+      value: Shading
       objectReference: {fileID: 0}
     - target: {fileID: 901701527891173495, guid: cb29bed7deae72545b7c9b1f1a9e5fe1,
         type: 3}
@@ -1785,7 +1785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2128350974
 MonoBehaviour:
   m_ObjectHideFlags: 0

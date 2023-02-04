@@ -17,7 +17,7 @@ public class SceneTransitioner : MonoBehaviour
     {
         if (mFadePanel.activeSelf)
             EndSceneTransition();
-        if(SceneManager.GetActiveScene().name == "Game")
+        if(SceneManager.GetActiveScene().name == mNextScene)
         {
             AudioManager.PlayBgMusic();
         }

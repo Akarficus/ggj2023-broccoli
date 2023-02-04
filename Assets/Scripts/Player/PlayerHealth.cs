@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         if ( mCurrentHealth <= 0 )
         {
             // go back to last checkpoint
-            transform.position = GameManager.Instance.mLastCheckPoint.position;
+            transform.position = GameManager.Instance.mLastCheckPoint;
             // reset current health back to max health
             mCurrentHealth = mMaxHealth;
             // reset health bar back to full

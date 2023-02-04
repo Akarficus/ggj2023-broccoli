@@ -52,4 +52,9 @@ public class SceneTransitioner : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadSceneAsync(mNextScene);
     }
+    public void ChangeLoadingScene(string pSceneName)
+    {
+        mNextScene = pSceneName;
+        BeginSceneTransition();
+    }
 }

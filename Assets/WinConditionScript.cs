@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class WinConditionScript : MonoBehaviour
 {
+    SceneTransitioner mTransition;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        mTransition = FindObjectOfType<SceneTransitioner>();
     }
 
     // Update is called once per frame
@@ -21,7 +23,8 @@ public class WinConditionScript : MonoBehaviour
     {
         Debug.Log("Player has escaped!");
         // Use a coroutine to load the Scene in the background
-        StartCoroutine(LoadWinConditionAsyncScene());
+        //StartCoroutine(LoadWinConditionAsyncScene());
+        mTransition.BeginSceneTransition();
     }
 
     IEnumerator LoadWinConditionAsyncScene()

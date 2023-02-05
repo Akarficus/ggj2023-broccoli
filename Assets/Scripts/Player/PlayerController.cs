@@ -111,12 +111,12 @@ public class PlayerController : MonoBehaviour
             mBeingChased = true;
             AudioManager.PlayBgMusic(1);
         }
-
-        mChasingEnemies.Add(pEnemy);
+        if(!mChasingEnemies.Contains(pEnemy))
+            mChasingEnemies.Add(pEnemy);
     }
     public void LooseEnemy(SimpleAI pEnemy)
     {
-        if(mChasingEnemies.Count > 0)
+        if(mChasingEnemies.Contains(pEnemy))
             mChasingEnemies.Remove(pEnemy);
         if (mChasingEnemies.Count == 0 && mBeingChased)
         {

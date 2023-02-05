@@ -1658,6 +1658,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3680489249969449166, guid: 8e002b0003d2d18409307693c4aac2de,
+        type: 3}
+      propertyPath: mRadiusMax
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680489249969449166, guid: 8e002b0003d2d18409307693c4aac2de,
+        type: 3}
+      propertyPath: mRadiusMin
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5295387290915577607, guid: 8e002b0003d2d18409307693c4aac2de,
         type: 3}
       propertyPath: mMovementController

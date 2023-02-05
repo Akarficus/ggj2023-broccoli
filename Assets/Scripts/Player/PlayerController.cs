@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     float mNextStep = 6f;
 
     bool mHitStun = false;
+    List<SimpleAI> mChasingEnemies = new List<SimpleAI>();
+    bool mBeingChased = false;
+    float mChaseTime = 0;
 
     //When class wakesup I need these things mapped
     private void Awake()
@@ -67,6 +70,11 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards( transform.rotation, fRot, mTurnSpeed * Time.deltaTime );
             //transform.rotation = fRot;
         }
+
+        if (mBeingChased && mChasingEnemies.Count == 0)
+        {
+
+        }
         
     }
 
@@ -94,6 +102,27 @@ public class PlayerController : MonoBehaviour
 
         mStepCycle = 0f;
         AudioManager.PlayOneShot(0, 0.70f);       
+    }
+
+    public void SetEnemy(SimpleAI pEnemy)
+    {
+        if (mChasingEnemies.Count == 0)
+        {
+            mBeingChased = true;
+            AudioManager.PlayBgMusic(1);
+        }
+
+        mChasingEnemies.Add(pEnemy);
+    }
+    public void LooseEnemy(SimpleAI pEnemy)
+    {
+        if(mChasingEnemies.Count > 0)
+            mChasingEnemies.Remove(pEnemy);
+        if (mChasingEnemies.Count == 0 && mBeingChased)
+        {
+            AudioManager.PlayBgMusic(0);
+            mBeingChased = false;
+        }
     }
 
     public void PushBack(Vector3 pHitPos)

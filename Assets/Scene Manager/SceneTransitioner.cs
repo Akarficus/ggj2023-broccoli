@@ -17,10 +17,10 @@ public class SceneTransitioner : MonoBehaviour
     {
         if (mFadePanel.activeSelf)
             EndSceneTransition();
-        if(SceneManager.GetActiveScene().name == mNextScene)
-        {
-            AudioManager.PlayBgMusic();
-        }
+        if (SceneManager.GetActiveScene().name == "Game")  
+            AudioManager.PlayBgMusic(0);       
+        else if (SceneManager.GetActiveScene().name == "Win")
+            AudioManager.PlayBgMusic(2);
     }
 
     public void BeginSceneTransition()

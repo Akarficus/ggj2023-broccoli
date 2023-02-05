@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
 
-    static AudioManager mActivemixer = null;
+    public static AudioManager mActivemixer = null;
 
     public AudioClip[] mBGSounds;//list of all background sounds/music
     public AudioClip[] mSounds;//list of all sounds that can be played
@@ -38,8 +38,13 @@ public class AudioManager : MonoBehaviour
         mBGSource.clip = mBGSounds[0];
     }
 
-    static public void PlayBgMusic()
+    static public void PlayBgMusic(int pMusic)
     {
+        AudioClip fClip = mActivemixer.mBGSounds[pMusic];
+        if (mActivemixer.mBGSource.clip == fClip && mActivemixer.mBGSource.isPlaying)
+            return;
+
+        mActivemixer.mBGSource.clip = fClip;
         mActivemixer.mBGSource.Play();
     }
     static public void StopBgMusic()
@@ -47,11 +52,13 @@ public class AudioManager : MonoBehaviour
         mActivemixer.mBGSource.Stop();
     }
 
+
+
     static public void PlayOneShot(string pName, float pVolume)
     {
         AudioClip fClip = null;
         //find sound clip to play
-        fClip = AudioManager.mActivemixer.GetSound(pName);
+        fClip = mActivemixer.GetSound(pName);
         if (!mActivemixer.mAudioSource.isPlaying)
         {
             mActivemixer.mAudioSource.clip = fClip;
@@ -62,7 +69,7 @@ public class AudioManager : MonoBehaviour
     {
         AudioClip fClip = null;
         //find sound clip to play
-        fClip = AudioManager.mActivemixer.mSounds[pIndex];
+        fClip = mActivemixer.mSounds[pIndex];
         if (!mActivemixer.mAudioSource.isPlaying)
         {
             mActivemixer.mAudioSource.clip = fClip;

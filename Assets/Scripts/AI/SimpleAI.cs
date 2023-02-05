@@ -37,11 +37,13 @@ public class SimpleAI : MonoBehaviour
         {
             mChasePlayer = false;
             ToggleObjects(false);
+            mPlayer.LooseEnemy(this);
         }
         else
         {
             mChasePlayer = true;
             ToggleObjects(true);
+            mPlayer.SetEnemy(this);
         }
 
         if (mPlayer != null && mChasePlayer)

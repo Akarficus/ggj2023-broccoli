@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: UV testpattern
+    second: {fileID: 2100000, guid: 71afbd644997f7e4da1c6a3571fe633d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: brown1
     second: {fileID: 2100000, guid: a43a7070cea17ae4bb48c335ef2443cc, type: 2}
   - first:

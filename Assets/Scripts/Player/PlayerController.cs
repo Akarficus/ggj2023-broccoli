@@ -93,9 +93,7 @@ public class PlayerController : MonoBehaviour
         }
 
         mStepCycle = 0f;
-
-        AudioManager.PlayOneShot(0, 0.70f);
-        
+        AudioManager.PlayOneShot(0, 0.70f);       
     }
 
     public void PushBack(Vector3 pHitPos)

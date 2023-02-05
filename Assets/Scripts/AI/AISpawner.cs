@@ -9,7 +9,10 @@ public class AISpawner : MonoBehaviour
     void start()
     {
         foreach (SimpleAI fAI in mSpawnables)
+        {   if (!fAI.gameObject.activeSelf)
+                fAI.gameObject.SetActive(true);
             fAI.enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

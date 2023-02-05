@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6814584028362384965}
   - component: {fileID: 3458256151753739809}
   - component: {fileID: 494191377494540434}
-  - component: {fileID: -823621414320167848}
+  - component: {fileID: 2011410855}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: CheckPoint
@@ -104,9 +104,9 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-823621414320167848
+--- !u!114 &2011410855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

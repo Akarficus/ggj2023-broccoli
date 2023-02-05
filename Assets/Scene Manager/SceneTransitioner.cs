@@ -17,6 +17,10 @@ public class SceneTransitioner : MonoBehaviour
     {
         if (mFadePanel.activeSelf)
             EndSceneTransition();
+        if (SceneManager.GetActiveScene().name == "Game")  
+            AudioManager.PlayBgMusic(0);       
+        else if (SceneManager.GetActiveScene().name == "Win")
+            AudioManager.PlayBgMusic(2);
     }
 
     public void BeginSceneTransition()
@@ -24,7 +28,7 @@ public class SceneTransitioner : MonoBehaviour
         mFadingIn = true;
         mFadePanel.SetActive(true);
         mTransitionAnimator.SetBool("FadeScreen", true);
-        
+      
     }
 
     //called when the animation for fading ends, either fading in or out
@@ -33,7 +37,7 @@ public class SceneTransitioner : MonoBehaviour
         if(mFadingIn)
             ChangeScene();
         else
-            mFadePanel.SetActive(false);
+            mFadePanel.SetActive(false);  
     }
 
 

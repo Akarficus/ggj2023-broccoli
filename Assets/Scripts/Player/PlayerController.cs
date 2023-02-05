@@ -31,6 +31,13 @@ public class PlayerController : MonoBehaviour
     //Private field to store and move action references
     private InputAction mMoveAction;
 
+    public float mStepCycle = 0f;
+    float mNextStep = 6f;
+
+    bool mHitStun = false;
+    List<SimpleAI> mChasingEnemies = new List<SimpleAI>();
+    bool mBeingChased = false;
+    float mChaseTime = 0;
 
     //When class wakesup I need these things mapped
     private void Awake()
@@ -43,6 +50,9 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Gather Inputs
+        if (mHitStun)
+            return;
+
         Vector2 fMoveVector = mMoveAction.ReadValue<Vector2>();
         mInput = new Vector3( fMoveVector.x, 0f, fMoveVector.y );
 
@@ -60,14 +70,72 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards( transform.rotation, fRot, mTurnSpeed * Time.deltaTime );
             //transform.rotation = fRot;
         }
+
+        if (mBeingChased && mChasingEnemies.Count == 0)
+        {
+
+        }
         
     }
 
     private void FixedUpdate()
     {
         //Move only when the mInput magnitude is being pushed or non 0
-        mRidgidBody.MovePosition( transform.position + ( transform.forward * mInput.magnitude ) * mSpeed * Time.deltaTime );
+        if (!mHitStun)
+        {
+            mRidgidBody.MovePosition(transform.position + (transform.forward * mInput.magnitude) * mSpeed * Time.deltaTime);
+            ProgressStepCycle();
+        }
+    }
 
+    private void ProgressStepCycle()
+    {
+        if (mInput.sqrMagnitude > 0)
+        {
+            mStepCycle += (mInput.magnitude + mSpeed) *Time.fixedDeltaTime;
+        }
+
+        if (mStepCycle < mNextStep)
+        {
+            return;
+        }
+
+        mStepCycle = 0f;
+        AudioManager.PlayOneShot(0, 0.70f);       
+    }
+
+    public void SetEnemy(SimpleAI pEnemy)
+    {
+        if (mChasingEnemies.Count == 0)
+        {
+            mBeingChased = true;
+            AudioManager.PlayBgMusic(1);
+        }
+        if(!mChasingEnemies.Contains(pEnemy))
+            mChasingEnemies.Add(pEnemy);
+    }
+    public void LooseEnemy(SimpleAI pEnemy)
+    {
+        if(mChasingEnemies.Contains(pEnemy))
+            mChasingEnemies.Remove(pEnemy);
+        if (mChasingEnemies.Count == 0 && mBeingChased)
+        {
+            AudioManager.PlayBgMusic(0);
+            mBeingChased = false;
+        }
+    }
+
+    public void PushBack(Vector3 pHitPos)
+    {
+        mHitStun = true;
+        mRidgidBody.AddForce((transform.position - pHitPos) * 300);
+        StartCoroutine(HitStunTime());
+    }
+
+    IEnumerator HitStunTime()
+    {
+        yield return new WaitForSeconds(1);
+        mHitStun = false;
     }
 
     //When the use key gets pressed ( prototype not sure if we will be using things )

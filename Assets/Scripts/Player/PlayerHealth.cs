@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar mHealthBar;
 
-
+    public GameObject mMovementController;
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +23,20 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown( KeyCode.Space ) )
         {
-            DamagePlayer( 10 );
+            //DamagePlayer( 10 );
         }
         // check to see if player is dead
         IsPlayerDead();
     }
 
-    public void DamagePlayer( int damage )
+    public void DamagePlayer( int damage, Vector3 pEnemyPos)
     {
         mCurrentHealth -= damage;
 
         mHealthBar.SetHealth( mCurrentHealth );
+
+        AudioManager.PlayOneShot(1,0.75f);
+        mMovementController.GetComponentInChildren<PlayerController>().PushBack(pEnemyPos);
     }
 
     public void IsPlayerDead()
@@ -41,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
         if ( mCurrentHealth <= 0 )
         {
             // go back to last checkpoint
-            transform.position = GameManager.Instance.mLastCheckPoint;
+            mMovementController.transform.position = GameManager.Instance.mLastCheckPoint;
             // reset current health back to max health
             mCurrentHealth = mMaxHealth;
             // reset health bar back to full

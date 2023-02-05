@@ -200,7 +200,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1c6827a2d09a79940ba441a908bb2187,
         type: 3}
       propertyPath: m_Name
-      value: Simple AI (1)
+      value: Simple AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1c6827a2d09a79940ba441a908bb2187,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3316992658331686828, guid: 1c6827a2d09a79940ba441a908bb2187,
         type: 3}

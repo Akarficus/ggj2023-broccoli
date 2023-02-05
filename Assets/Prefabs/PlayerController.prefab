@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1998319025436876136}
   - component: {fileID: 1998319025436876137}
   - component: {fileID: 5295387290915577607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 168189110962252912}
   - {fileID: 7913058976886431378}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1998319025436876150
 MeshFilter:
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cfc9d52b8c9fe34d965b498cf37c687, type: 2}
+  - {fileID: 4212698619225058240, guid: 91bac4d0eb64d5e4080dab774435f605, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -440,6 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01201b195e83e534899a1c531b913586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mRadiusMax: 0
+  mRadiusMin: 0
 --- !u!1 &7967759589308904632
 GameObject:
   m_ObjectHideFlags: 0

@@ -12078,6 +12078,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5243478298762723402, guid: 89917e6a43ee0354da637acfe9104c12,
+        type: 3}
+      propertyPath: mSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243478298762723402, guid: 89917e6a43ee0354da637acfe9104c12,
+        type: 3}
+      propertyPath: mSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 116d913141266f3488a361cf88feab0c, type: 3}
     - target: {fileID: 5243478298762723403, guid: 89917e6a43ee0354da637acfe9104c12,
         type: 3}
       propertyPath: m_RootOrder

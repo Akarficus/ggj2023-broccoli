@@ -35,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
 
         mHealthBar.SetHealth( mCurrentHealth );
 
+        AudioManager.PlayOneShot(1,0.75f);
         mMovementController.GetComponentInChildren<PlayerController>().PushBack(pEnemyPos);
     }
 

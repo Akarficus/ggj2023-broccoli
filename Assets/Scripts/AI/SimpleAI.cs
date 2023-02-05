@@ -33,7 +33,16 @@ public class SimpleAI : MonoBehaviour
 
         mDistanceToPlayer = Vector3.Distance(transform.position, mPlayer.transform.position);
 
-        mChasePlayer = mDistanceToPlayer >= mChaseCutOff ? false : true;
+        if (mDistanceToPlayer >= mChaseCutOff)
+        {
+            mChasePlayer = false;
+            ToggleObjects(false);
+        }
+        else
+        {
+            mChasePlayer = true;
+            ToggleObjects(true);
+        }
 
         if (mPlayer != null && mChasePlayer)
         {

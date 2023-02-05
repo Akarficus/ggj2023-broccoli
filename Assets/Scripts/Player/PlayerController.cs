@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         pHitPos = mHitPosition;
         mHitStun = true;
+        //mRidgidBody.velocity = (pHitPos - transform.position).normalized *3
         mRidgidBody.AddForce((pHitPos - transform.position).normalized * 500);
         StartCoroutine(HitStunTime());
     }

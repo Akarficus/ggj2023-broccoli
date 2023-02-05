@@ -12,12 +12,16 @@ public class SimpleAI : MonoBehaviour
     public float mMoveSpeed = 0.5f;
     public float mChaseCutOff = 10;
     float mDistanceToPlayer;
+    Vector3 mPOrigin;
+    Quaternion mROrigin;
 
     public GameObject[] mDisableObjects;
 
     void Start()
     {
         mPlayer = FindObjectOfType<PlayerController>();
+        mPOrigin = transform.position;
+        mROrigin = transform.rotation;
     }
 
     private void OnEnable()
@@ -32,6 +36,14 @@ public class SimpleAI : MonoBehaviour
             return;
 
         mDistanceToPlayer = Vector3.Distance(transform.position, mPlayer.transform.position);
+
+        if (mDistanceToPlayer >= mChaseCutOff * 2)
+        { 
+            mWaiting = true;
+            transform.position = mPOrigin;
+            transform.rotation = mROrigin;
+            return; 
+        }
 
         if (mDistanceToPlayer >= mChaseCutOff)
         {

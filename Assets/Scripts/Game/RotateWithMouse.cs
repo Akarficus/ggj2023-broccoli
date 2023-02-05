@@ -7,7 +7,7 @@ public class RotateWithMouse : MonoBehaviour
 {
     public float mRadiusMax;
     public float mRadiusMin;
-
+   
     private RaycastHit mHit;
     private Vector3 mLastPoint;
     // Start is called before the first frame update
@@ -22,11 +22,17 @@ public class RotateWithMouse : MonoBehaviour
         // tie player rotation to mouse
         //PlayerRotateMouseMovement();
         //Vector3 aimPos = GetAimPos();
+        // Bit shift the index of the variable mLayerMaskToIgnore to get a bit mask
+        //int fLayerMask = 1 << mLayerMaskToIgnore;
+        //int fLayerMask = LayerMask.NameToLayer("Floor");
+        // This would cast rays only against colliders in the layer.
+        // But instead we want to collide against everything except this layer. The ~ operator does this, it inverts a bitmask.
+        //fLayerMask = ~fLayerMask;
 
         //Debug.Log("X Aim Pos:" + aimPos.x);
         // cast ray from camera to mouse position
         Ray fRay = Camera.main.ScreenPointToRay( Input.mousePosition );
-        Physics.Raycast(fRay, out mHit, 100f);
+        Physics.Raycast(fRay, out mHit, Mathf.Infinity);
 
         // reference: https://stackoverflow.com/questions/57593968/restricting-cursor-to-a-radius-around-my-player
         // reference: https://docs.unity3d.com/2018.3/Documentation/Manual/DirectionDistanceFromOneObjectToAnother.html

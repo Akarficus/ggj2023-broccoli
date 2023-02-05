@@ -33,7 +33,11 @@ public class MainMenuManager : MonoBehaviour
             mPressedCreditsButton = false;
             SceneManager.LoadSceneAsync("Credits");
         }
-        
+        // exit the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         
     }
 

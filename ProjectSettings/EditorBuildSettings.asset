@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scene Manager/TransitionScene2.unity
     guid: ea86b0c073b6b01418c565aafc42b19f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Shading.unity
     guid: 9a6e8bd1b0488d2458f01155261df62f
   m_configObjects:

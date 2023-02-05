@@ -23,17 +23,19 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown( KeyCode.Space ) )
         {
-            DamagePlayer( 10 );
+            //DamagePlayer( 10 );
         }
         // check to see if player is dead
         IsPlayerDead();
     }
 
-    public void DamagePlayer( int damage )
+    public void DamagePlayer( int damage, Vector3 pEnemyPos)
     {
         mCurrentHealth -= damage;
 
         mHealthBar.SetHealth( mCurrentHealth );
+
+        mMovementController.GetComponentInChildren<PlayerController>().PushBack(pEnemyPos);
     }
 
     public void IsPlayerDead()

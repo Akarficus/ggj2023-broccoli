@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public float mStepCycle = 0f;
     float mNextStep = 6f;
 
+    Vector3 mHitPosition;
+    bool mHitStun = false;
 
     //When class wakesup I need these things mapped
     private void Awake()
@@ -46,6 +48,9 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Gather Inputs
+        if (mHitStun)
+            return;
+
         Vector2 fMoveVector = mMoveAction.ReadValue<Vector2>();
         mInput = new Vector3( fMoveVector.x, 0f, fMoveVector.y );
 
@@ -69,9 +74,11 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //Move only when the mInput magnitude is being pushed or non 0
-        mRidgidBody.MovePosition( transform.position + ( transform.forward * mInput.magnitude ) * mSpeed * Time.deltaTime );
-        ProgressStepCycle();
-
+        if (!mHitStun)
+        {
+            mRidgidBody.MovePosition(transform.position + (transform.forward * mInput.magnitude) * mSpeed * Time.deltaTime);
+            ProgressStepCycle();
+        }
     }
 
     private void ProgressStepCycle()
@@ -91,8 +98,24 @@ public class PlayerController : MonoBehaviour
         AudioManager.PlayOneShot(0, 0.75f);
         
     }
-        //When the use key gets pressed ( prototype not sure if we will be using things )
-        private void OnUse( InputAction.CallbackContext pContext )
+
+    public void PushBack(Vector3 pHitPos)
+    {
+        pHitPos = mHitPosition;
+        mHitStun = true;
+        mRidgidBody.AddForce((pHitPos - transform.position).normalized * 500);
+        StartCoroutine(HitStunTime());
+    }
+
+    IEnumerator HitStunTime()
+    {
+        yield return new WaitForSeconds(1);
+        mHitStun = false;
+        mHitPosition = Vector3.zero;
+    }
+
+    //When the use key gets pressed ( prototype not sure if we will be using things )
+    private void OnUse( InputAction.CallbackContext pContext )
     {
         Debug.Log( "Used the thing" );
     }

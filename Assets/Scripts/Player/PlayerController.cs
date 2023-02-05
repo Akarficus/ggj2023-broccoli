@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     public float mStepCycle = 0f;
     float mNextStep = 6f;
 
-    Vector3 mHitPosition;
     bool mHitStun = false;
 
     //When class wakesup I need these things mapped
@@ -95,16 +94,14 @@ public class PlayerController : MonoBehaviour
 
         mStepCycle = 0f;
 
-        AudioManager.PlayOneShot(0, 0.75f);
+        AudioManager.PlayOneShot(0, 0.70f);
         
     }
 
     public void PushBack(Vector3 pHitPos)
     {
-        pHitPos = mHitPosition;
         mHitStun = true;
-        //mRidgidBody.velocity = (pHitPos - transform.position).normalized *3
-        mRidgidBody.AddForce((pHitPos - transform.position).normalized * 500);
+        mRidgidBody.AddForce((transform.position - pHitPos) * 300);
         StartCoroutine(HitStunTime());
     }
 
@@ -112,7 +109,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         mHitStun = false;
-        mHitPosition = Vector3.zero;
     }
 
     //When the use key gets pressed ( prototype not sure if we will be using things )

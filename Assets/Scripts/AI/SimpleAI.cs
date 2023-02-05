@@ -42,6 +42,7 @@ public class SimpleAI : MonoBehaviour
             mWaiting = true;
             transform.position = mPOrigin;
             transform.rotation = mROrigin;
+            enabled = false;
             return; 
         }
 

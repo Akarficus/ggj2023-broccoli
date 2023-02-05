@@ -22,7 +22,7 @@ public class SimpleAI : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(IdleTime(3));
+        StartCoroutine(IdleTime(1.5f));
     }
 
     // Update is called once per frame

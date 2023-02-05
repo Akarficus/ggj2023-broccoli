@@ -68,8 +68,8 @@ public class SimpleAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player" && mChasePlayer)
-        {
+        if (collision.gameObject.tag == "Player" && mChasePlayer)
+        {       
             AttackPlayer();
         }
     }

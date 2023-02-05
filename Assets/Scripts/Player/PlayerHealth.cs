@@ -21,11 +21,6 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown( KeyCode.Space ) )
-        {
-            //DamagePlayer( 10 );
-        }
-        // check to see if player is dead
         IsPlayerDead();
     }
 

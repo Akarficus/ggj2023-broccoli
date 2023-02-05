@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
     bool mHitStun = false;
     List<SimpleAI> mChasingEnemies = new List<SimpleAI>();
     bool mBeingChased = false;
-    float mChaseTime = 0;
 
     //When class wakesup I need these things mapped
     private void Awake()
@@ -69,13 +68,7 @@ public class PlayerController : MonoBehaviour
             //Add some lerp
             transform.rotation = Quaternion.RotateTowards( transform.rotation, fRot, mTurnSpeed * Time.deltaTime );
             //transform.rotation = fRot;
-        }
-
-        if (mBeingChased && mChasingEnemies.Count == 0)
-        {
-
-        }
-        
+        }  
     }
 
     private void FixedUpdate()
@@ -128,7 +121,7 @@ public class PlayerController : MonoBehaviour
     public void PushBack(Vector3 pHitPos)
     {
         mHitStun = true;
-        mRidgidBody.AddForce((transform.position - pHitPos) * 300);
+        mRidgidBody.AddForce((transform.position - pHitPos) * 3000);
         StartCoroutine(HitStunTime());
     }
 

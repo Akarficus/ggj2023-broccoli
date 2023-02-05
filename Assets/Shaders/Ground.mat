@@ -28,12 +28,40 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Dirt:
+        m_Texture: {fileID: 2800000, guid: 99ffdffcd38f0d843a64ed1450dc0526, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Grass:
+        m_Texture: {fileID: 2800000, guid: 6dcb5e3f6278d314b820be5f7ca9d82e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Leaf_Pile:
+        m_Texture: {fileID: 2800000, guid: 696162de6abb4f345a7667ea452552c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Leaves:
+        m_Texture: {fileID: 2800000, guid: 2af8a35bdb0d5e042bae459eee469042, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _RampTexture:
         m_Texture: {fileID: 2800000, guid: 9771bd5fbe60f8f42a9c5f5b9caff218, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_083f5db2d8c149689d4c914ac53332a2_Texture_1:
         m_Texture: {fileID: 2800000, guid: fedf48ad66ced5e41bd9487318ee870d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_191e1dd2f0bf4fb98ab7057ed9b0582a_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_ce94cb30a17b4bc7b94fc042c0d4e692_Out_0:
+        m_Texture: {fileID: 2800000, guid: 9771bd5fbe60f8f42a9c5f5b9caff218, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_ff7449765c934fa8a0df33581a4654a6_Out_0:
+        m_Texture: {fileID: 2800000, guid: 36f118343fc974119bee3d09e2111500, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _VertexColorGround_5749d484dc6343a2827be171c71000bc_Texture2DE23EED6E_1570980599:

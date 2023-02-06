@@ -32,7 +32,9 @@ public class RotateWithMouse : MonoBehaviour
         //Debug.Log("X Aim Pos:" + aimPos.x);
         // cast ray from camera to mouse position
         Ray fRay = Camera.main.ScreenPointToRay( Input.mousePosition );
-        Physics.Raycast(fRay, out mHit, Mathf.Infinity);
+        Physics.Raycast(fRay, out mHit, 100f);
+
+        //transform.LookAt(mHit.point);
 
         // reference: https://stackoverflow.com/questions/57593968/restricting-cursor-to-a-radius-around-my-player
         // reference: https://docs.unity3d.com/2018.3/Documentation/Manual/DirectionDistanceFromOneObjectToAnother.html
@@ -54,5 +56,6 @@ public class RotateWithMouse : MonoBehaviour
             transform.LookAt(mHit.point);
         }       
     }
+
 
 }

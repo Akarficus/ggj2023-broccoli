@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -41,9 +43,20 @@ public class PlayerController : MonoBehaviour
     //When class wakesup I need these things mapped
     private void Awake()
     {
-        mMoveAction = mActions.FindActionMap( "gameplay" ).FindAction( "move" );
+        // Return the current Active Scene in order to get the current Scene name.
+        UnityEngine.SceneManagement.Scene fScene = SceneManager.GetActiveScene();
+        if (fScene.name == "Credits")
+        {
+            mMoveAction = mActions.FindActionMap("credits").FindAction("move");
 
-        mActions.FindActionMap( "gameplay" ).FindAction( "use" ).performed += OnUse;
+            mActions.FindActionMap("credits").FindAction("use").performed += OnUse;
+        }
+        else
+        {
+            mMoveAction = mActions.FindActionMap("gameplay").FindAction("move");
+
+            mActions.FindActionMap("gameplay").FindAction("use").performed += OnUse;
+        }
     }
 
     private void Update()
@@ -141,12 +154,30 @@ public class PlayerController : MonoBehaviour
     //When the class gets enabled and disabled turn the action map on and off
     private void OnEnable()
     {
-        mActions.FindActionMap( "gameplay" ).Enable();
+        // Return the current Active Scene in order to get the current Scene name.
+        UnityEngine.SceneManagement.Scene fScene = SceneManager.GetActiveScene();
+        if (fScene.name == "Credits")
+        {
+            mActions.FindActionMap("credits").Enable();
+        }
+        else
+        {
+            mActions.FindActionMap("gameplay").Enable();
+        }
     }
 
     private void OnDisable()
     {
-        mActions.FindActionMap( "gameplay" ).Disable();
+        // Return the current Active Scene in order to get the current Scene name.
+        UnityEngine.SceneManagement.Scene fScene = SceneManager.GetActiveScene();
+        if (fScene.name == "Credits")
+        {
+            mActions.FindActionMap("credits").Disable();
+        }
+        else
+        {
+            mActions.FindActionMap("gameplay").Disable();
+        }
     }
 
 

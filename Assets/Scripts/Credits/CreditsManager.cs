@@ -14,7 +14,7 @@ public class CreditsManager : MonoBehaviour
     void Update()
     {
         // exit the game
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Application.platform == RuntimePlatform.WindowsPlayer)
         {
             Application.Quit();
         }

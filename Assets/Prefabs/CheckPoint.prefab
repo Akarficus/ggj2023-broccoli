@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3458256151753739809}
   - component: {fileID: 494191377494540434}
   - component: {fileID: 2011410855}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint
   m_TagString: CheckPoint
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &6814584028362384965
 MeshRenderer:

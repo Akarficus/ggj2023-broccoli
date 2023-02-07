@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckPointController : MonoBehaviour
 {
+    public Material mCheckPointReachedMat;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class CheckPointController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Renderer fRenderer = GetComponent<Renderer>();
+        fRenderer.material = mCheckPointReachedMat;
         GameManager.Instance.mLastCheckPoint = transform.position;
     }
 }

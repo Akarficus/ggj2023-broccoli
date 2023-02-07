@@ -34,7 +34,7 @@ public class MainMenuManager : MonoBehaviour
             SceneManager.LoadSceneAsync("Credits");
         }
         // exit the game
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Application.platform == RuntimePlatform.WindowsPlayer)
         {
             Application.Quit();
         }
